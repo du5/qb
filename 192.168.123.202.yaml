@@ -1,0 +1,14 @@
+version: "3"
+services:
+  qbittorrent:
+    image: linuxserver/qbittorrent
+    environment:
+      - PUID=0
+      - PGID=0
+      - TZ=Asia/Shanghai
+      - WEBUI_PORT=8080
+    volumes:
+      - /share/CACHEDEV1_DATA/qb/config:/config
+      - /share/CACHEDEV1_DATA/qb/downloads:/downloads
+    network_mode: host
+    restart: unless-stopped
